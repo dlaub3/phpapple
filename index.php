@@ -6,19 +6,20 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>PHP Apple Home</title>
 	<link rel="stylesheet" href="assets/styles/style.css">
-
+    
 </head>
 <body>
 
-<main class="main">
-<h1>
-<?php 
+<main class="main main-bg">
 
-echo "Hello from PHP";
+<?php
+ini_set('display_errors', 'on');
+
+echo "<h1>Hello from PHP</h1>";
+require_once('app/app.php');
 
 ?>
-</h1>
-</main class="main">
+</main>
 <footer>
 <script src="assets/scripts/main.js" >
 </script>
