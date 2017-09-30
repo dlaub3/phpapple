@@ -11,16 +11,22 @@
 <body>
 
 <main class="main main-bg">
-
+<h1> This is the form Page </h1>
 <?php
 ini_set('display_errors', 'on');
 
-echo "<p><a href=\"form.php\" >Form Page:</a>g;
 
-echo "<h1>Hello from PHP</h1>";
-require_once('app/app.php');
 
 ?>
+
+<form action="form_processing.php" method="post" />
+    Username: <input type="text" name="username" value=""><br />
+    Password: <input type="password" name="password" value="" /><br />
+    <br />
+    <input type="submit" name="submit" value="submit" />
+</form>
+
+
 </main>
 <footer>
 <script src="assets/scripts/main.js" >

@@ -9,13 +9,13 @@ use InterfaceKingdom;
 abstract class Dog implements InterfaceKingdom {
     use \Animal;
 
-    public static $count;
-    public static $puppiesCountAllBreeds;
-    public $puppiesCount = 0;
+    private static $count;
+    private static $puppiesCountAllBreeds;
+    private $puppiesCount = 0;
 
-    public $dogBreed = null;
-    public $dogSize = null;
-    public $dogColor = null;
+    protected $dogBreed = null;
+    protected $dogSize = null;
+    protected $dogColor = null;
 
     public function __construct() {
         self::$count += 1;
@@ -34,7 +34,7 @@ abstract class Dog implements InterfaceKingdom {
         return "<p> Congratulations! You have $this->puppiesCount $this->dogBreed puppies.</p>"; 
     }
 
-    public function setTotalPupies(int $morePuppies) {
+    protected function setTotalPupies(int $morePuppies) {
         self::$puppiesCountAllBreeds = self::$puppiesCountAllBreeds + $morePuppies;
     }
 

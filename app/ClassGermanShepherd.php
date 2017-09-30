@@ -2,7 +2,7 @@
 require_once('AbstractClassDog.php');
 
 class GermanShepherd extends Dog\Dog {
-    public $dogBreed = "German Shepherd";
-    public $dogSize = "large";
-    public $dogColor = "brown and black";
+    protected $dogBreed = "German Shepherd";
+    protected $dogSize = "large";
+    protected $dogColor = "brown and black";
 }

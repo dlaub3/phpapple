@@ -11,20 +11,3 @@
 <body>
 
 <main class="main main-bg">
-
-<?php
-ini_set('display_errors', 'on');
-
-echo "<p><a href=\"form.php\" >Form Page:</a>g;
-
-echo "<h1>Hello from PHP</h1>";
-require_once('app/app.php');
-
-?>
-</main>
-<footer>
-<script src="assets/scripts/main.js" >
-</script>
-</footer>
-</body>
-</html>
