@@ -31,8 +31,7 @@ echo "<div>
 
 
 
-//create an exception 
-:
+//create an exception
 
 $bestPet = function(string $bestPet = "dog") {
 
