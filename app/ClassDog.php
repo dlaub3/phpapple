@@ -1,17 +1,19 @@
 <?php
 namespace Dog;
 
-require_once('InterfaceAnimal.php');
+require_once('InterfaceKingdom.php');
 
-use InterfaceAnimal;
+use InterfaceKingdom;
 
-abstract class Dog implements InterfaceAnimal {
+abstract class Dog implements InterfaceKingdom {
 
     public static $count;
     public static $puppiesCountAllBreeds;
     public $puppiesCount = 0;
-    public $breed = null;
-    public $size = null;
+
+    public $dogBreed = null;
+    public $dogSize = null;
+    public $dogColor = null;
 
     public function __construct() {
         self::$count += 1;
@@ -19,28 +21,39 @@ abstract class Dog implements InterfaceAnimal {
     }
     
     public function __destruct() {
-        echo "<h4>Your $this->breed is sleeping.";
+        echo "<h4>Your $this->dogBreed is sleeping.";
     }
 
-    public function makePuppies(int $num) {
+    public function makePuppies(int $num): string {
         $this->puppiesCount = $this->puppiesCount + $num;
         //add new puppies to total puppies
         $this->setTotalPupies($num);
         //return puppies for this breed of dog.
-        return "<p> Congratulations! You have $this->puppiesCount $this->breed puppies.</p>"; 
+        return "<p> Congratulations! You have $this->puppiesCount $this->dogBreed puppies.</p>"; 
     }
 
-    public function setTotalPupies($morePuppies) {
+    public function setTotalPupies(int $morePuppies) {
         self::$puppiesCountAllBreeds = self::$puppiesCountAllBreeds + $morePuppies;
     }
 
-    public static function getTotalPuppies() {
+    public static function getTotalPuppies(): int {
         return self::$puppiesCountAllBreeds;
     }
 
+    public function getDogColor(): string {
+        return $this->dogColor;
+    }
+
+    public function getDogSize(): string {
+        return $this->dogSize;
+    }
+
     //Interface Methods
-    public static function kingdom($kingdom) {
-        echo "<h4>A dog is in the $kingdom Kingdom.</h4>";
+    public static function kingdom($kingdom = null): string {
+        if ($kingdom === null) {
+          $kingdom = 'Animal';
+        }
+        return "<h4>A dog is in the $kingdom Kingdom.</h4>";
     }
 
 }
