@@ -6,8 +6,7 @@ require_once('app/ClassGermanShepherd.php');
 
 //creating a PHP closure
 
-$feed = function(int $fed = null ): string {
-    
+$feed = function(int $fed = null ): string { 
     if ( $fed === null ) {
        return "Your dog is unhappy. You should feed him.<br />";
     }
@@ -29,6 +28,38 @@ echo "<div>
         $hungryDog
         $happyDog
      </div>";
+
+
+
+//create an exception 
+:
+
+$bestPet = function(string $bestPet = "dog") {
+
+    if($bestPet != "dog" ) {
+        throw new Exception("The best Pet is not a $bestPet. <br />");
+    }
+    echo "The best pet is a $bestPet <br />";
+};
+
+//trigger the exception
+try {
+    $bestPet("cat");
+} catch(Exception $e) {
+    $e->getMessage();
+} finally {
+    if ( $e ) {
+        echo $e->getMessage();
+    }
+}
+
+//execute normally
+try {
+    $bestPet("dog");
+} catch(Exception $e) {
+    $e->getMessage();
+}
+
 
 
 //this method is inherited from the parent

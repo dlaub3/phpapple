@@ -1,6 +1,6 @@
 <?php 
 
-require_once('ClassDog.php');
+require_once('AbstractClassDog.php');
 
 class Beagle extends Dog\Dog {
     

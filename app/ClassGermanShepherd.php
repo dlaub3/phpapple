@@ -1,5 +1,5 @@
 <?php
-require_once('ClassDog.php');
+require_once('AbstractClassDog.php');
 
 class GermanShepherd extends Dog\Dog {
     public $dogBreed = "German Shepherd";
