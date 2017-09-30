@@ -2,10 +2,12 @@
 namespace Dog;
 
 require_once('InterfaceKingdom.php');
+require_once('TraitAnimal.php');
 
 use InterfaceKingdom;
 
 abstract class Dog implements InterfaceKingdom {
+    use \Animal;
 
     public static $count;
     public static $puppiesCountAllBreeds;
@@ -46,6 +48,12 @@ abstract class Dog implements InterfaceKingdom {
 
     public function getDogSize(): string {
         return $this->dogSize;
+    }
+
+    //using the Animal trait
+    public function feedDog() {
+        $diet = $this->diet('Kibbles and Bits');
+        return "<p> $diet, Woof. </p>";
     }
 
     //Interface Methods

@@ -44,6 +44,9 @@ $germanShepherdColor = $germanShepherd->getDogColor();
 $beagleSize = $beagle->getDogSize();
 $beagleColor = $beagle->getDogColor();
 
+//Animal Trait tells us what the Dog eats
+$diet = $beagle->feedDog();
+echo $diet;
 
 echo "A Beagle is a $beagleSize breed of dog with $beagleColor fur.";
 echo "A German Shepherd is a $germanShepherdSize breed of dog with $germanShepherdColor fur.";
